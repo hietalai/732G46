@@ -1,0 +1,10 @@
+# Assignment L1
+name  : L1
+description :  "732G46: Lab 1"
+tasks:
+  lmSimple:
+  url:
+  - tasks/lmSimpleTests.R
+mandatory:
+  url:
+  - mandatory_group.R

@@ -1,7 +1,8 @@
 # Ignore everything:
-*
+/*
+/*/
 # Except for wordpress themes:
-!,markmyassignment/
+!/,markmyassignment/
 !README.md
 !LICENSE
 !.gitignore
