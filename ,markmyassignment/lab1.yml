@@ -7,4 +7,4 @@ tasks:
   - tasks/lmSimpleTests.R
 mandatory:
   url:
-  - mandatory_group.R
+  - mandatoryInfo.R
