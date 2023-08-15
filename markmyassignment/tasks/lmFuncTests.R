@@ -145,7 +145,7 @@ test_that("lmFunc", {
               info = "elementet betaCov är ej korrekt för lmFunc(X = trees[1:15,1:2],y = trees$Volume[1:15],betaTest = TRUE,mu0 = c(0,0,0)) ")
   # expect_true(object = all.equal(list5$testMat,comp_list$test5$test_mat,check.attributes=FALSE,tolerance=1e-5),
   #             info = "elementet testMat är ej korrekt för lmFunc(X = trees[1:15,1:2],y = trees$Volume[1:15],betaTest = TRUE,mu0 = c(0,0,0))")
-  expect_true(object = all(abs(list5$testMat-comp_list$test5$testMat)<1e-5),
+  expect_true(object = all(abs(list5$testMat-comp_list$test7$test_mat)<1e-5),
               info = "elementet testMat är ej korrekt för lmFunc(X = trees[1:15,1:2],y = trees$Volume[1:15],betaTest = TRUE,mu0 = c(0,0,0))")
   #-----------------------------------------------------------------------------
   
@@ -175,7 +175,7 @@ test_that("lmFunc", {
               info = "elementet betaCov är ej korrekt för lmFunc(X = Prestige[,1:3],y = Prestige[,4],betaTest = TRUE,mu0 = c(0,0,0,0)) ")
   # expect_true(object = all.equal(list7$testMat,comp_list$test7$test_mat,check.attributes=FALSE,tolerance=1e-5),
   #             info = "elementet testMat är ej korrekt för lmFunc(X = Prestige[,1:3],y = Prestige[,4],betaTest = TRUE,mu0 = c(0,0,0,0)) ")
-  expect_true(object =  all(abs(list7$testMat-comp_list$test7$testMat)<1e-5),
+  expect_true(object =  all(abs(list7$testMat-comp_list$test7$test_mat)<1e-5),
               info = "elementet testMat är ej korrekt för lmFunc(X = Prestige[,1:3],y = Prestige[,4],betaTest = TRUE,mu0 = c(0,0,0,0)) ")
   #-----------------------------------------------------------------------------
   
