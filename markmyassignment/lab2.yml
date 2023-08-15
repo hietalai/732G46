@@ -2,7 +2,7 @@
 name  : L2
 description :  "732G46: Lab 2"
 tasks:
-  lmSimple:
+  lmFunc:
     url:
       - tasks/lmFuncTests.R
 mandatory:
