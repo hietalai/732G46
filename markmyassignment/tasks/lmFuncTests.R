@@ -89,7 +89,7 @@ test_that("lmFunc", {
               info = "elementet beta är ej korrekt för lmFunc(X = trees[,1,drop=FALSE],y = trees$Volume,betaTest = FALSE,mu0 = c(0,0)")
   expect_true(object = all.equal(list1$sigma,comp_list$test1$sigma,check.attributes=FALSE,tolerance=1e-6),
               info = "elementet sigma är ej korrekt för lmFunc(X = trees[,1,drop=FALSE],y = trees$Volume,betaTest = FALSE,mu0 = c(0,0)")
-  expect_true(object = all.equal(list1$betaCov,comp_list$test1$betaCov,check.attributes=FALSE,tolerance=1e-6),
+  expect_true(object = all.equal(list1$betaCov,comp_list$test1$beta_cov,check.attributes=FALSE,tolerance=1e-6),
               info = "elementet betaCov är ej korrekt för lmFunc(X = trees[,1,drop=FALSE],y = trees$Volume,betaTest = FALSE,mu0 = c(0,0)")
   #-----------------------------------------------------------------------------
   
@@ -101,7 +101,7 @@ test_that("lmFunc", {
               info = "elementet beta är ej korrekt för lmFunc(X = trees[,1:2],y = trees$Volume,betaTest = FALSE,mu0 = c(0,0,0))")
   expect_true(object = all.equal(list2$sigma,comp_list$test2$sigma,check.attributes=FALSE,tolerance=1e-6),
               info = "elementet sigma är ej korrekt för lmFunc(X = trees[,1:2],y = trees$Volume,betaTest = FALSE,mu0 = c(0,0,0))")
-  expect_true(object = all.equal(list2$betaCov,comp_list$test2$betaCov,check.attributes=FALSE,tolerance=1e-6),
+  expect_true(object = all.equal(list2$betaCov,comp_list$test2$beta_cov,check.attributes=FALSE,tolerance=1e-6),
               info = "elementet betaCov är ej korrekt för lmFunc(X = trees[,1:2],y = trees$Volume,betaTest = FALSE,mu0 = c(0,0,0))")
   #-----------------------------------------------------------------------------
   
@@ -113,9 +113,9 @@ test_that("lmFunc", {
               info = "elementet beta är ej korrekt för lmFunc(X = trees[,1,drop=FALSE],y = trees$Volume,betaTest = TRUE,mu0 = c(0,0)) ")
   expect_true(object = all.equal(list3$sigma,comp_list$test3$sigma,check.attributes=FALSE,tolerance=1e-6),
               info = "elementet sigma är ej korrekt för lmFunc(X = trees[,1,drop=FALSE],y = trees$Volume,betaTest = TRUE,mu0 = c(0,0)) ")
-  expect_true(object = all.equal(list3$betaCov,comp_list$test3$betaCov,check.attributes=FALSE,tolerance=1e-6),
+  expect_true(object = all.equal(list3$betaCov,comp_list$test3$beta_cov,check.attributes=FALSE,tolerance=1e-6),
               info = "elementet betaCov är ej korrekt för lmFunc(X = trees[,1,drop=FALSE],y = trees$Volume,betaTest = TRUE,mu0 = c(0,0)) ")
-  expect_true(object = all.equal(list3$testMat,comp_list$test3$testMat,check.attributes=FALSE,tolerance=1e-6),
+  expect_true(object = all.equal(list3$testMat,comp_list$test3$test_mat,check.attributes=FALSE,tolerance=1e-6),
               info = "elementet testMat är ej korrekt för lmFunc(X = trees[,1,drop=FALSE],y = trees$Volume,betaTest = TRUE,mu0 = c(0,0)) ")
   #-----------------------------------------------------------------------------
   
@@ -127,9 +127,9 @@ test_that("lmFunc", {
               info = "elementet beta är ej korrekt för lmFunc(X = trees[,1,drop=FALSE],y = trees$Volume,betaTest = TRUE,mu0 = c(-35,5)) ")
   expect_true(object = all.equal(list4$sigma,comp_list$test4$sigma,check.attributes=FALSE,tolerance=1e-6),
               info = "elementet sigma är ej korrekt för lmFunc(X = trees[,1,drop=FALSE],y = trees$Volume,betaTest = TRUE,mu0 = c(-35,5)) ")
-  expect_true(object = all.equal(list4$betaCov,comp_list$test4$betaCov,check.attributes=FALSE,tolerance=1e-6),
+  expect_true(object = all.equal(list4$betaCov,comp_list$test4$beta_cov,check.attributes=FALSE,tolerance=1e-6),
               info = "elementet betaCov är ej korrekt för lmFunc(X = trees[,1,drop=FALSE],y = trees$Volume,betaTest = TRUE,mu0 = c(-35,5)) ")
-  expect_true(object = all.equal(list4$testMat,comp_list$test4$testMat,check.attributes=FALSE,tolerance=1e-5),
+  expect_true(object = all.equal(list4$testMat,comp_list$test4$test_mat,check.attributes=FALSE,tolerance=1e-5),
               info = "elementet testMat är ej korrekt för lmFunc(X = trees[,1,drop=FALSE],y = trees$Volume,betaTest = TRUE,mu0 = c(-35,5)) ")
   #-----------------------------------------------------------------------------
   
@@ -141,9 +141,9 @@ test_that("lmFunc", {
               info = "elementet beta är ej korrekt för lmFunc(X = trees[1:15,1:2],y = trees$Volume[1:15],betaTest = TRUE,mu0 = c(0,0,0)) ")
   expect_true(object = all.equal(list5$sigma,comp_list$test5$sigma,check.attributes=FALSE,tolerance=1e-6),
               info = "elementet sigma är ej korrekt för lmFunc(X = trees[1:15,1:2],y = trees$Volume[1:15],betaTest = TRUE,mu0 = c(0,0,0)) ")
-  expect_true(object = all.equal(list5$betaCov,comp_list$test5$betaCov,check.attributes=FALSE,tolerance=1e-6),
+  expect_true(object = all.equal(list5$betaCov,comp_list$test5$beta_cov,check.attributes=FALSE,tolerance=1e-6),
               info = "elementet betaCov är ej korrekt för lmFunc(X = trees[1:15,1:2],y = trees$Volume[1:15],betaTest = TRUE,mu0 = c(0,0,0)) ")
-  # expect_true(object = all.equal(list5$testMat,comp_list$test5$testMat,check.attributes=FALSE,tolerance=1e-5),
+  # expect_true(object = all.equal(list5$testMat,comp_list$test5$test_mat,check.attributes=FALSE,tolerance=1e-5),
   #             info = "elementet testMat är ej korrekt för lmFunc(X = trees[1:15,1:2],y = trees$Volume[1:15],betaTest = TRUE,mu0 = c(0,0,0))")
   expect_true(object = all(abs(list5$testMat-comp_list$test5$testMat)<1e-5),
               info = "elementet testMat är ej korrekt för lmFunc(X = trees[1:15,1:2],y = trees$Volume[1:15],betaTest = TRUE,mu0 = c(0,0,0))")
@@ -159,7 +159,7 @@ test_that("lmFunc", {
               info = "elementet beta är ej korrekt för lmFunc(X = Prestige[,1:3],y = Prestige[,4],betaTest = FALSE,mu0 = c(0,0,0,0))  ")
   expect_true(object = all.equal(list6$sigma,comp_list$test6$sigma,check.attributes=FALSE,tolerance=1e-6),
               info = "elementet sigma är ej korrekt för lmFunc(X = Prestige[,1:3],y = Prestige[,4],betaTest = FALSE,mu0 = c(0,0,0,0))  ")
-  expect_true(object = all.equal(list6$betaCov,comp_list$test6$betaCov,check.attributes=FALSE,tolerance=1e-6),
+  expect_true(object = all.equal(list6$betaCov,comp_list$test6$beta_cov,check.attributes=FALSE,tolerance=1e-6),
               info = "elementet betaCov är ej korrekt för lmFunc(X = Prestige[,1:3],y = Prestige[,4],betaTest = FALSE,mu0 = c(0,0,0,0))  ")
   #-----------------------------------------------------------------------------
   
@@ -171,9 +171,9 @@ test_that("lmFunc", {
               info = "elementet beta är ej korrekt för lmFunc(X = Prestige[,1:3],y = Prestige[,4],betaTest = TRUE,mu0 = c(0,0,0,0)) ")
   expect_true(object = all.equal(list7$sigma,comp_list$test7$sigma,check.attributes=FALSE,tolerance=1e-6),
               info = "elementet sigma är ej korrekt för lmFunc(X = Prestige[,1:3],y = Prestige[,4],betaTest = TRUE,mu0 = c(0,0,0,0)) ")
-  expect_true(object = all.equal(list7$betaCov,comp_list$test7$betaCov,check.attributes=FALSE,tolerance=1e-6),
+  expect_true(object = all.equal(list7$betaCov,comp_list$test7$beta_cov,check.attributes=FALSE,tolerance=1e-6),
               info = "elementet betaCov är ej korrekt för lmFunc(X = Prestige[,1:3],y = Prestige[,4],betaTest = TRUE,mu0 = c(0,0,0,0)) ")
-  # expect_true(object = all.equal(list7$testMat,comp_list$test7$testMat,check.attributes=FALSE,tolerance=1e-5),
+  # expect_true(object = all.equal(list7$testMat,comp_list$test7$test_mat,check.attributes=FALSE,tolerance=1e-5),
   #             info = "elementet testMat är ej korrekt för lmFunc(X = Prestige[,1:3],y = Prestige[,4],betaTest = TRUE,mu0 = c(0,0,0,0)) ")
   expect_true(object =  all(abs(list7$testMat-comp_list$test7$testMat)<1e-5),
               info = "elementet testMat är ej korrekt för lmFunc(X = Prestige[,1:3],y = Prestige[,4],betaTest = TRUE,mu0 = c(0,0,0,0)) ")
@@ -187,9 +187,9 @@ test_that("lmFunc", {
               info = "elementet beta är ej korrekt för lmFunc(X = Prestige[,1:3],y = Prestige[,4],betaTest = TRUE,mu0 = c(-6,4,0.001,0.01)) ")
   expect_true(object = all.equal(list8$sigma,comp_list$test8$sigma,check.attributes=FALSE,tolerance=1e-6),
               info = "elementet sigma är ej korrekt för lmFunc(X = Prestige[,1:3],y = Prestige[,4],betaTest = TRUE,mu0 = c(-6,4,0.001,0.01)) ")
-  expect_true(object = all.equal(list8$betaCov,comp_list$test8$betaCov,check.attributes=FALSE,tolerance=1e-6),
+  expect_true(object = all.equal(list8$betaCov,comp_list$test8$beta_cov,check.attributes=FALSE,tolerance=1e-6),
               info = "elementet betaCov är ej korrekt för lmFunc(X = Prestige[,1:3],y = Prestige[,4],betaTest = TRUE,mu0 = c(-6,4,0.001,0.01)) ")
-  expect_true(object = all.equal(list8$testMat,comp_list$test8$testMat,check.attributes=FALSE,tolerance=1e-5),
+  expect_true(object = all.equal(list8$testMat,comp_list$test8$test_mat,check.attributes=FALSE,tolerance=1e-5),
               info = "elementet testMat är ej korrekt för lmFunc(X = Prestige[,1:3],y = Prestige[,4],betaTest = TRUE,mu0 = c(-6,4,0.001,0.01)) ")
   #-----------------------------------------------------------------------------
   
@@ -207,7 +207,7 @@ test_that("lmFunc", {
               info = "elementet beta är ej korrekt för lmFunc(X = X,y =y,betaTest = FALSE,mu0 = c(0,0,0,0,0)), X och y är simulerade, se labben")
   expect_true(object = all.equal(list9$sigma,comp_list$test9$sigma,check.attributes=FALSE,tolerance=1e-6),
               info = "elementet sigma är ej korrekt för lmFunc(X = X,y =y,betaTest = FALSE,mu0 = c(0,0,0,0,0)), X och y är simulerade, se labben")
-  expect_true(object = all.equal(list9$betaCov,comp_list$test9$betaCov,check.attributes=FALSE,tolerance=1e-6),
+  expect_true(object = all.equal(list9$betaCov,comp_list$test9$beta_cov,check.attributes=FALSE,tolerance=1e-6),
               info = "elementet betaCov är ej korrekt för lmFunc(X = X,y =y,betaTest = FALSE,mu0 = c(0,0,0,0,0)), X och y är simulerade, se labben")
   #-----------------------------------------------------------------------------
   
@@ -219,9 +219,9 @@ test_that("lmFunc", {
               info = "elementet beta är ej korrekt för lmFunc(X = X,y =y,betaTest = TRUE,mu0 = c(0,0,0,0,0)), X och y är simulerade, se labben ")
   expect_true(object = all.equal(list10$sigma,comp_list$test10$sigma,check.attributes=FALSE,tolerance=1e-6),
               info = "elementet sigma är ej korrekt för lmFunc(X = X,y =y,betaTest = TRUE,mu0 = c(0,0,0,0,0))), X och y är simulerade, se labben ")
-  expect_true(object = all.equal(list10$betaCov,comp_list$test10$betaCov,check.attributes=FALSE,tolerance=1e-6),
+  expect_true(object = all.equal(list10$betaCov,comp_list$test10$beta_cov,check.attributes=FALSE,tolerance=1e-6),
               info = "elementet betaCov är ej korrekt för lmFunc(X = X,y =y,betaTest = TRUE,mu0 = c(0,0,0,0,0)), X och y är simulerade, se labben ")
-  expect_true(object = all.equal(list10$testMat,comp_list$test10$testMat,check.attributes=FALSE,tolerance=1e-5),
+  expect_true(object = all.equal(list10$testMat,comp_list$test10$test_mat,check.attributes=FALSE,tolerance=1e-5),
               info = "elementet testMat är ej korrekt för lmFunc(X = X,y =y,betaTest = TRUE,mu0 = c(0,0,0,0,0)), X och y är simulerade, se labben ")
   #-----------------------------------------------------------------------------
   
@@ -233,9 +233,9 @@ test_that("lmFunc", {
               info = "elementet beta är ej korrekt för lmFunc(X = X,y =y,betaTest = TRUE,mu0 = c(-2,2,0,0,-3)), X och y är simulerade, se labben ")
   expect_true(object = all.equal(list11$sigma,comp_list$test11$sigma,check.attributes=FALSE,tolerance=1e-6),
               info = "elementet sigma är ej korrekt för lmFunc(X = X,y =y,betaTest = TRUE,mu0 = c(-2,2,0,0,-3)), X och y är simulerade, se labben ")
-  expect_true(object = all.equal(list11$betaCov,comp_list$test11$betaCov,check.attributes=FALSE,tolerance=1e-6),
+  expect_true(object = all.equal(list11$betaCov,comp_list$test11$beta_cov,check.attributes=FALSE,tolerance=1e-6),
               info = "elementet betaCov är ej korrekt för lmFunc(X = X,y =y,betaTest = TRUE,mu0 = c(-2,2,0,0,-3)), X och y är simulerade, se labben ")
-  expect_true(object = all.equal(list11$testMat,comp_list$test11$testMat,check.attributes=FALSE,tolerance=1e-5),
+  expect_true(object = all.equal(list11$testMat,comp_list$test11$test_mat,check.attributes=FALSE,tolerance=1e-5),
               info = "elementet testMat är ej korrekt för lmFunc(X = X,y =y,betaTest = TRUE,mu0 = c(-2,2,0,0,-3)), X och y är simulerade, se labben ")
   #-----------------------------------------------------------------------------
   
