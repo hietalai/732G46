@@ -1,0 +1,10 @@
+# Assignment L2
+name  : L2
+description :  "732G46: Lab 2"
+tasks:
+  lmSimple:
+    url:
+      - tasks/lmFuncTests.R
+mandatory:
+  url:
+    - mandatoryInfo.R
